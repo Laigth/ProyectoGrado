@@ -49,17 +49,50 @@ $routes->get('productos/enable/(:num)', 'Productos::enable/$1', ['filter' => 'au
 $routes->delete('productos/delete/(:num)', 'Productos::delete/$1', ['filter' => 'auth']);
 $routes->get('logout', 'Productos::logout', ['filter' => 'auth']);
 
+$routes->get('categoria/listar', 'Categoria::listar', ['filter' => 'auth']);
+$routes->get('categoria/create', 'Categoria::create', ['filter' => 'auth']);
+$routes->post('categoria/store', 'Categoria::store', ['filter' => 'auth']);
+$routes->get('categoria/editar/(:num)', 'Categoria::editar/$1', ['filter' => 'auth']);
+$routes->put('categoria/update/(:num)', 'Categoria::update/$1', ['filter' => 'auth']);
+$routes->delete('categoria/delete/(:num)', 'Categoria::delete/$1', ['filter' => 'auth']);
+
+$routes->get('clientes/listar', 'Clientes::listar', ['filter' => 'auth']);
+$routes->get('clientes/create', 'Clientes::create', ['filter' => 'auth']);
+$routes->post('clientes/store', 'Clientes::store', ['filter' => 'auth']);
+$routes->get('clientes/editar/(:num)', 'Clientes::editar/$1', ['filter' => 'auth']);
+$routes->put('clientes/update/(:num)', 'Clientes::update/$1', ['filter' => 'auth']);
+$routes->delete('clientes/delete/(:num)', 'Clientes::delete/$1', ['filter' => 'auth']);
+
+$routes->get('usuarios/listar', 'Usuarios::index', ['filter' => 'auth']);
 $routes->get('usuarios/login', 'Usuarios::login');
 $routes->post('usuarios/inicioSesion', 'Usuarios::inicioSesion');
 $routes->get('usuarios/register', 'Usuarios::register');
 $routes->post('usuarios/registro', 'Usuarios::registro');
+$routes->delete('usuarios/delete/(:num)', 'Usuarios::delete/$1', ['filter' => 'auth']);
+$routes->get('usuarios/disable/(:num)', 'Usuarios::disable/$1', ['filter' => 'auth']);
+$routes->get('usuarios/enable/(:num)', 'Usuarios::enable/$1', ['filter' => 'auth']);
 
 $routes->post('usuarios/verificar', 'Usuarios::verificar');
 $routes->get('usuarios/verificar', 'Usuarios::verificarGet');
+$routes->get('usuarios/reenviar', 'Usuarios::reenviarCodigo');
 
-$routes->get('cambiar-contrasena', 'Usuarios::cambiarContrasena', ['filter' => 'auth']);
-$routes->post('actualizar-contrasena', 'Usuarios::actualizarContrasena', ['filter' => 'auth']);
+$routes->get('usuarios/cambiarContrasena', 'Usuarios::cambiarContrasena', ['filter' => 'auth']);
+$routes->post('usuarios/cambiarContrasena', 'Usuarios::cambiarContrasena1', ['filter' => 'auth']);
 
+$routes->get('ventas', 'Ventas::index', ['filter' => 'auth']);
+$routes->post('ventas/buscarUsuario', 'Ventas::buscarUsuario', ['filter' => 'auth']);
+$routes->get('ventas/seleccionarUsuario/(:num)', 'Ventas::seleccionarUsuario/$1', ['filter' => 'auth']);
+$routes->post('ventas/buscarProducto', 'Ventas::buscarProducto', ['filter' => 'auth']);
+$routes->get('ventas/agregarProducto/(:num)', 'Ventas::agregarProducto/$1', ['filter' => 'auth']);
+$routes->get('ventas/finalizarCompra', 'Ventas::finalizarCompra', ['filter' => 'auth']);
+
+
+$routes->get('medicos/listar', 'Medicos::listar', ['filter' => 'auth']);
+$routes->get('medicos/create', 'Medicos::create', ['filter' => 'auth']);
+$routes->post('medicos/store', 'Medicos::store', ['filter' => 'auth']);
+$routes->get('medicos/editar/(:num)', 'Medicos::editar/$1', ['filter' => 'auth']);
+$routes->put('medicos/update/(:num)', 'Medicos::update/$1', ['filter' => 'auth']);
+$routes->delete('medicos/delete/(:num)', 'Medicos::delete/$1', ['filter' => 'auth']);
 /*
  * --------------------------------------------------------------------
  * Additional Routing
